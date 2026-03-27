@@ -1,0 +1,61 @@
+{
+  "name": "socialsportmedia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio",
+    "prisma:push": "prisma db push",
+    "prisma:pull": "prisma db pull",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:migrate:deploy": "prisma migrate deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arek09082001/SocialSportMedia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arek09082001/SocialSportMedia/issues"
+  },
+  "homepage": "https://github.com/arek09082001/SocialSportMedia#readme",
+  "dependencies": {
+    "@auth/supabase-adapter": "^1.11.1",
+    "@supabase/supabase-js": "^2.95.3",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tanstack/react-query": "^5.90.21",
+    "@tanstack/react-query-devtools": "^5.91.3",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vercel/og": "^0.8.6",
+    "bcryptjs": "^3.0.3",
+    "class-variance-authority": "^0.7.1",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.6",
+    "lucide-react": "^0.572.0",
+    "next": "^16.1.6",
+    "next-auth": "^4.24.13",
+    "next-intl": "^4.8.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwind-merge": "^3.4.1",
+    "typescript": "^5.9.3",
+    "web-haptics": "^0.0.6"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.22.0",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "prisma": "^5.22.0",
+    "tailwindcss": "^4.2.1"
+  }
+}
