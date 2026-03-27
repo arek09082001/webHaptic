@@ -17,48 +17,6 @@ type DemoPattern = {
 
 const demoPatterns: DemoPattern[] = [
   {
-    id: "login-soft",
-    name: "Login Soft",
-    useCase: "Login",
-    description: "A clean, light confirmation that feels successful without demanding attention.",
-    feeling: "Polite and trustworthy",
-    recommended: true,
-    pattern: [
-      { duration: 18, intensity: 0.35 },
-      { delay: 44, duration: 24, intensity: 0.55 },
-    ],
-    defaultIntensity: 0.45,
-    accentClassName: "from-[var(--accent-ocean)] to-[var(--accent-sky)]",
-  },
-  {
-    id: "login-crisp",
-    name: "Login Crisp",
-    useCase: "Login",
-    description: "A slightly sharper login acknowledgment if you want a stronger sense of completion.",
-    feeling: "Fast and confident",
-    recommended: false,
-    pattern: [
-      { duration: 22, intensity: 0.45 },
-      { delay: 38, duration: 28, intensity: 0.8 },
-    ],
-    defaultIntensity: 0.55,
-    accentClassName: "from-[var(--accent-slate)] to-[var(--accent-cloud)]",
-  },
-  {
-    id: "tracking-start",
-    name: "Tracking Start",
-    useCase: "Start tracking",
-    description: "A positive launch pulse that feels energetic without turning into an error-style buzz.",
-    feeling: "Ready to move",
-    recommended: true,
-    pattern: [
-      { duration: 24, intensity: 0.45 },
-      { delay: 52, duration: 34, intensity: 0.95 },
-    ],
-    defaultIntensity: 0.75,
-    accentClassName: "from-[var(--accent-coral)] to-[var(--accent-gold)]",
-  },
-  {
     id: "tracking-start-heavy",
     name: "Tracking Start Heavy",
     useCase: "Start tracking",
@@ -116,7 +74,7 @@ const demoPatterns: DemoPattern[] = [
   },
 ];
 
-const primaryFlow = ["login-soft", "tracking-start", "tracking-pause", "tracking-stop"];
+const primaryFlow = ["tracking-start-heavy", "tracking-pause", "tracking-stop"];
 
 export default function HomePage() {
   const [debugAudio, setDebugAudio] = useState(true);
@@ -147,7 +105,7 @@ export default function HomePage() {
               </span>
               <div className="space-y-4">
                 <h1 className="max-w-3xl text-3xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-6xl">
-                  Tune the right haptic feedback for login, start, pause, and stop.
+                  Tune the right haptic feedback for start, pause, and stop.
                 </h1>
                 <p className="max-w-2xl text-sm leading-7 text-(--text-secondary) sm:text-lg">
                   This board is built for phone testing. Try the core time-recording flow first, then compare the extended examples below until the app feels right in the hand instead of just looking right on screen.
@@ -160,7 +118,7 @@ export default function HomePage() {
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <p className="text-xs uppercase tracking-[0.18em] text-(--text-muted)">Recommended flow</p>
-                  <p className="mt-2 leading-6">Start with Login Soft, Tracking Start, Tracking Pause, and Tracking Stop.</p>
+                  <p className="mt-2 leading-6">Start with Tracking Start Heavy, Tracking Pause, and Tracking Stop.</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <p className="text-xs uppercase tracking-[0.18em] text-(--text-muted)">Slider purpose</p>
