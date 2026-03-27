@@ -1,85 +1,78 @@
 @import "tailwindcss";
 
 @theme {
-  /* Purple-Magenta Palette */
-  --color-purple-dark: hsl(290 62% 31%);    /* #701E80 */
-  --color-magenta: hsl(312 80% 34%);        /* #9C1180 */
-  --color-cyan: hsl(186 100% 50%);          /* Cyan accent */
-  --color-purple-light: hsl(303 29% 68%);   /* #C595C3 */
-  
-  /* Near-black backgrounds (dark theme defaults) */
-  --color-background: hsl(240 10% 4%);       /* #0b0b0f - main background */
-  --color-surface: hsl(240 8% 8%);           /* #121216 - cards, sections */
-  --color-surface-hover: hsl(240 8% 10%);    /* #18181c - hover state */
-  
-  /* Borders */
-  --color-border: hsl(240 8% 14%);           /* #21212a - subtle borders */
-  --color-border-light: hsl(240 8% 18%);     /* #2a2a35 - lighter borders */
-  
-  /* Text colors */
-  --color-text-primary: hsl(0 0% 95%);       /* #f2f2f2 - almost white */
-  --color-text-secondary: hsl(240 5% 65%);   /* #a1a1aa - gray */
-  --color-text-muted: hsl(240 5% 50%);       /* #7e7e8a - muted */
-
-  /* Semantic colors */
-  --color-success: hsl(142 72% 29%);         /* #16a34a - green-700 */
+  --page-background: #f3efe5;
+  --panel-background: rgba(15, 28, 40, 0.82);
+  --card-background: rgba(21, 37, 52, 0.88);
+  --text-primary: #f7f2e8;
+  --text-secondary: rgba(239, 231, 216, 0.76);
+  --text-muted: rgba(239, 231, 216, 0.54);
+  --accent-ocean: #7be0e6;
+  --accent-sky: #d7f7ff;
+  --accent-coral: #f78b6b;
+  --accent-gold: #ffcf63;
 }
 
-/* Light mode overrides */
-html.light {
-  --color-background: hsl(240 10% 97%);
-  --color-surface: hsl(0 0% 100%);
-  --color-surface-hover: hsl(240 5% 94%);
-  --color-border: hsl(240 8% 85%);
-  --color-border-light: hsl(240 8% 80%);
-  --color-text-primary: hsl(240 10% 10%);
-  --color-text-secondary: hsl(240 5% 40%);
-  --color-text-muted: hsl(240 5% 55%);
-  --color-success: hsl(142 72% 29%);
+html {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(123, 224, 230, 0.28), transparent 28%),
+    radial-gradient(circle at top right, rgba(247, 139, 107, 0.22), transparent 34%),
+    linear-gradient(180deg, #173047 0%, #0e1e2e 38%, #08131f 100%);
 }
 
-@utility bg-gradient-primary {
-  background: linear-gradient(135deg, var(--color-purple-dark), var(--color-magenta));
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 42%),
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
 }
 
-@utility bg-gradient-primary-hover {
-  background: linear-gradient(135deg, hsl(290 62% 36%), hsl(312 80% 39%));
+* {
+  box-sizing: border-box;
 }
 
-@utility text-gradient-primary {
-  background: linear-gradient(135deg, var(--color-purple-dark), var(--color-magenta));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+::selection {
+  background: rgba(123, 224, 230, 0.28);
+  color: var(--text-primary);
 }
 
-@theme {
-  --animate-slide-in: slide-in 0.35s ease-out;
-  --animate-success-flash: success-flash 0.5s ease-out forwards;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.1rem;
+  width: 1.1rem;
+  border-radius: 9999px;
+  border: 0;
+  background: #fff7ea;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
 }
 
-@keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+input[type="range"]::-moz-range-thumb {
+  height: 1.1rem;
+  width: 1.1rem;
+  border: 0;
+  border-radius: 9999px;
+  background: #fff7ea;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
 }
 
-@keyframes success-flash {
-  0% {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+button,
+input {
+  font: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
