@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Web Haptics Demo",
-  description: "Minimal demo app for testing two custom web haptic patterns with adjustable intensity.",
+  description: "Mobile-first demo app for testing haptic feedback patterns for login and time tracking actions.",
 };
 
 export default function RootLayout({
